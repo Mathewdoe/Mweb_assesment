@@ -14,7 +14,6 @@ function Mweb() {
   const [campaigns, setCampaigns] = useState([]);
   const [selectedCampaign, setSelectedCampaign] = useState();
   const [products, setProducts] = useState([]);
-  
   const [filterPriceRange, setFilterPriceRange] = useState([]);
   const [selectedProviders, setSelectedProviders] = useState([]);
 
@@ -36,7 +35,6 @@ function Mweb() {
     if (!selectedCampaign) {
       return;
     }
-    setProviders([]);
     setProducts([]);
     fetch(
       `${BASE_URL}/marketing/products/promos/${selectedCampaign.promocodes.join(
@@ -48,11 +46,6 @@ function Mweb() {
         data.forEach((item) => {
           item.products.forEach((product) => {
             setProducts((state) => [...state, product]);
-            setProviders((state) => {
-              if (state.includes(product.subcategory)) {
-                return state;
-              }
-              return [...state, product.subcategory];
             });
           });
         });
@@ -172,7 +165,7 @@ function ProductCard({ product, selectedCampaign }) {
             <h4>R{product.productRate}pm</h4>
           </Col>
           <Col>
-            {/* <Row> */}
+            
             <Col>
               Download{" "}
               {formatLineSpeed(
