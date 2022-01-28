@@ -14,7 +14,7 @@ function Mweb() {
   const [campaigns, setCampaigns] = useState([]);
   const [selectedCampaign, setSelectedCampaign] = useState();
   const [products, setProducts] = useState([]);
-  const [providers, setProviders] = useState([]);
+  
   const [filterPriceRange, setFilterPriceRange] = useState([]);
   const [selectedProviders, setSelectedProviders] = useState([]);
 
