@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Form, Row, Col, Card } from "react-bootstrap";
-import logos from '../logo/logo.json';
+import logos from "../logo/logo.json";
 
 const priceRanges = [
   { min: 0, max: 699, label: "R0 - R699" },
@@ -46,7 +46,6 @@ function Mweb() {
         data.forEach((item) => {
           item.products.forEach((product) => {
             setProducts((state) => [...state, product]);
-            });
           });
         });
       });
@@ -165,7 +164,6 @@ function ProductCard({ product, selectedCampaign }) {
             <h4>R{product.productRate}pm</h4>
           </Col>
           <Col>
-            
             <Col>
               Download{" "}
               {formatLineSpeed(
